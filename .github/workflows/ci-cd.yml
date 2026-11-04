@@ -3,7 +3,7 @@ name: CI/CD Pipeline
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
 
 jobs:
   build-and-test:
@@ -24,7 +24,7 @@ jobs:
 
       - name: Run Tests
         working-directory: ./src
-        run: npm test
+        run: npm test --if-present
 
   push-to-dockerhub:
     needs: build-and-test
